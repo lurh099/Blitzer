@@ -1,23 +1,26 @@
 // IF Statements
 
 function main() {
-var input = document.getElementById("inputColor");
+var inputMaxSpeed = document.getElementById("maxSpeed");
+var inputSpeed = document.getElementById("speed");
+var inputDir = document.getElementById("dir");
 
-var color = input.value;
-var lowerColorName = color.toLocaleLowerCase();
+var maxSpeed = parseInt(inputMaxSpeed.value);
+var speed = parseInt(inputSpeed.value);
+var isFacing = inputDir.checked;
+ 
+var tolerance = maxSpeed + ((maxSpeed/100)*10);
 
-if(lowerColorName == "grün") {
-    alert("Du darfst fahren");
-} else if(lowerColorName == "orange") {
-    alert("Du darfs anfahren oder bremsen");
-} else if(lowerColorName == "rot") {
-    alert("Du musst halten");
-} else {
-    alert("Keine gültige Ampel-Farbe");
-}
+console.log(speed);
+console.log(tolerance);
+console.log(speed-tolerance);
 
-console.log(alert);
-}
+
+if(speed > tolerance && isFacing == true) {
+   alert("Du wurdest geblitzt");
+};
+
+};
 
 
 
